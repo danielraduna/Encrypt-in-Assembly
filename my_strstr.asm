@@ -5,7 +5,7 @@ section .text
     extern printf
 
 my_strstr:
-    ;; DO NOT MODIFY
+    
     push    ebp
     mov     ebp, esp
     pusha
@@ -15,7 +15,7 @@ my_strstr:
     mov     ebx, [ebp + 16]     ; needle
     mov     ecx, [ebp + 20]     ; haystack_len
     mov     edx, [ebp + 24]     ; needle_len
-    ;; DO NOT MODIFY
+    
     mov DWORD [ebp - 4], 0     ;se initializeaza variabila-index pentru haystack
     mov DWORD [ebp - 8], 1     ;se initializeaza variabila-index pentru needle
     
@@ -68,8 +68,8 @@ subsir_nonexistent:             ;label pentru cazul in care nu exista subsir
 out:                            ;pentru ca a trebuit sa pun edx lungimea haystack am facut un label care sa le puna la sfarsit lungimile cum erau la inceput 
     mov     ecx, [ebp + 20]     
     mov     edx, [ebp + 24]
-    ;; DO NOT MODIFY
+    
     popa
     leave
     ret
-    ;; DO NOT MODIFY
+    
