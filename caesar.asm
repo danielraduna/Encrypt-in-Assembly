@@ -5,7 +5,7 @@ section .text
     extern printf
 
 caesar:
-    ;; DO NOT MODIFY
+    
     push    ebp
     mov     ebp, esp
     pusha
@@ -15,9 +15,7 @@ caesar:
     mov     edi, [ebp + 16]     ; key
     mov     ecx, [ebp + 20]     ; length
     
-    ;; DO NOT MODIFY
-
-    ;; TODO: Implement the caesar cipher
+ 
     cmp edi, 26             ;; comparam cheia cu 26 
     jg scadere_cheie        ;; daca este mai mare scadem cheia
     jl while                ;; daca este mai mic sarim in label-ul while unde se face totul
@@ -90,9 +88,9 @@ adaugare:                        ;;label care face adaugarea in cyphertext
 
 
 
-    ;; DO NOT MODIFY
+    
 
     popa
     leave
     ret
-    ;; DO NOT MODIFY
+   
