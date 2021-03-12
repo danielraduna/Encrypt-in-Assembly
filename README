@@ -1,0 +1,24 @@
+Tema 2-Strings
+La aceasta tema pentru fiecare task, labelul principal in care se produc majoritatea lucrurilor este while.
+
+Task 1: One Time Pad
+Pentru acest task am parcurs atat sirul dat cat si cheia de la stanga la dreapta. Pun in al litera din plaintext si in ah pun litera din cheie. Fac xor intre cele doua litere si rezultatul il pun cyphertext. Folosesc loop pentru a decrementa automat ecx.
+
+Task 2: Caesar Cipher
+In primul rand, am verificat daca cheia este un numar mai mic de 26. Daca nu fac scaderi repetate cu 26 pana cand cheia ajunge sa fie mai mica decat 26. Dupa ce am o cheie ok, parcurg sirul de la dreapta la stanga ca la taskul 1. Imi fac o copie a cheii mutand-o pentru fiecare litera in ebx. Din acest moment exista doua drumuri pentru litera noastra. 
+1) Comparam litera cu a, daca este mai mare sau egala sarim intr-un label in care comparam cu litera z, de acolo daca este mai mica sau egala sarim intr-un label pentru a face adunarea cu cheia. Daca este mai mare ca z  adaugam caracterul asa cum este. Cand adunam cu cheia, mai intai comparam cheia cu zero si daca a ajuns la 0 adaugam litera obtinuta in cyphertext. Adunam 1 la litera si scadem 1 din cheie. Dupa comparam litera cu z, daca este egal sarim intr-un label pentru a transforma litera in a. Dar mai intai comparam cheia cu 0, daca este egal adaugam z in cyphertext, daca nu transformam litera in a.
+2)Comparam litera cu A si reluam algoritmul de mai sus. Daca caracterul este mai mic decat A il adaugam asa cum este. 
+
+Task 3: Vigenere Cipher
+La inceput initializez doua variabile-index pentru plaintext si cheie. Comparam indexul pentru cheie cu lungimea cheii si daca sunt egale sarim in labelul cheie_extinsa unde resetam indexul, facandu-l 0. Pentru acest task nu putem parcurge sirurile ca la celelalte taskuri(de la dreapta la stanga), acum trebuie de la stanga la dreapta. Mut indexul pentru plaintext in ecx, caracterul din plaintext in al si dupa incrementam indexul. Facem aceleasi comparatii ca la taskul 2, si daca nu este litera adaugam caracterul asa cum este el. Daca este litera: mutam in ebx inexul pentru cheie, in ah mut litera din cheie, incrementez indexul si mut inapoi in ebx lungimea cheii. Dupa scad 65 din litera pentru a determina pozitia din alfabet. In labelul calcul facem adunarea dintre al si ah. Daca ah ajunge 0 sarim in labelul adaugare. Incrementez litera si decrementez ah. Compar litera cu z daca egal si ah e diferit de 0 o transform in a. Analog pentru Z si A.
+In labelul adaugare, adaug caracterul in cyphertext. Pun inapoi in ecx lungimea plaintextului si din ecx indexul pentru plaintext. Daca este 0 programul se opreste, iar daca este mai mare se repeta labelul while.
+
+Task 4: StrStr
+La inceput initializez doua variabile-index pentru haystack si needle. Pun in ah
+ prima litera din needle si sar in while. Pun in al caractere din haystack si compar cu prima litera din needle(ah). Daca sunt egale sar in subsir pentru a verifica daca gasesc intregul needle in haystack. Daca nu sunt egale incrementez indexul si repet aceste instructiuni. 
+In labelul subsir, daca indexul pentru needle este egal cu lugimea totala atunci sarim sa adaugam in edi indexul primei aparitii a lui needle. Crestem cei doi indexi si luam caracterele de pe acele pozitii daca sunt egale repetam aceste instructiuni. Daca nu resetam indexul pentru cheie si punem in ah prima litera din needle, din nou.
+In labelul adaugare punem in edx lungimea lui haystack pentru ca nu mai folosim la nimic acel registru momentan. Comparam indexul pentru haystack cu lungimea totala, iar daca este mai mare sau egal sarim intr-un label pentru cazul in care needle nu se gaseste in haystack. Daca este mai mic scadem din indexul pentru haystack, lungimea cheii si adunam unu. rezultatul il punem in edi.
+In labelul subsir_nonexistent incrementam lungimea totala a lui haystack si o ad
+augam in edi.
+In labelul out, pentru ca am pus in edx lungimea lui haystack m-am gandit sa fac sa fie ca la inceput.
+
