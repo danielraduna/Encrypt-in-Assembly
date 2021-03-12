@@ -5,7 +5,7 @@ section .text
     extern printf
 
 vigenere:
-    ;; DO NOT MODIFY
+    
     push    ebp
     mov     ebp, esp
     pusha
@@ -15,7 +15,7 @@ vigenere:
     mov     ecx, [ebp + 16]     ; plaintext_len
     mov     edi, [ebp + 20]     ; key
     mov     ebx, [ebp + 24]     ; key_len
-    ;; DO NOT MODIFY
+ 
 
 	 mov DWORD [ebp - 4], 0     ;se initializeaza variabila-index pentru plaintext
 	 mov DWORD [ebp - 8], 0     ;se initializeaza variabila-index pentru cheie
@@ -88,10 +88,8 @@ adaugare:						;label care facec adaugarea in cyphertext
 	jg while
     
     
-
-    ;; DO NOT MODIFY
     popa
     leave
     ret
     PRINTF32 `\n`
-    ;; DO NOT MODIFY
+    
